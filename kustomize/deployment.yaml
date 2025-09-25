@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 172.24.147.150:5000/nginx:v3.0.0 # {"$imagepolicy": "flux-system:nginx-latest"}
+          image: 172.24.147.150:5000/nginx:v4.0.0 # {"$imagepolicy": "flux-system:nginx-latest"}
           ports:
             - containerPort: 80
