@@ -1,0 +1,10 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: nginx-local
+  namespace: flux-system
+spec:
+  interval: 1m
+  image: 172.24.147.150:5000/nginx
+  #insecure: true   # because it’s a local registry without TLS
+

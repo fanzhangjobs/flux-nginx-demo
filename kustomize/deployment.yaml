@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: localhost:5000/nginx:v1
-          ports:
+          image: 172.24.147.150:5000/nginx:v2
+          port
             - containerPort: 80
 
