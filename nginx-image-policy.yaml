@@ -8,5 +8,5 @@ spec:
     name: nginx-local
   policy:
     semver:
-      range: ">=v1"   # picks the latest version matching v1+
+      range: ">=v1.0.0"   # picks the latest version matching v1+
 

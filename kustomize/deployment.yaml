@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 3 
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 172.24.147.150:5000/nginx:v2
-          port
+          image: 172.24.147.150:5000/nginx:v2 # {"$imagepolicy": "flux-system:nginx-latest"}
+          ports:
             - containerPort: 80
 

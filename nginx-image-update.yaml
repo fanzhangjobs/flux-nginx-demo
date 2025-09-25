@@ -1,4 +1,4 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
   name: nginx-auto-update
@@ -9,7 +9,19 @@ spec:
     kind: GitRepository
     name: flux-nginx
     namespace: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: fluxcdbot
+        email: fluxcdbot@users.noreply.github.com
+      messageTemplate: |
+        chore: update nginx image to {{range .Updated.Images}}{{.}}{{end}}
+    push:
+      branch: main
   update:
-    path: "./"
+    path: "./kustomize"
     strategy: Setters
 
